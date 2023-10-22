@@ -2,6 +2,9 @@
     "name": "andrisunardi/library",
     "description": "Library Andri Sunardi",
     "type": "library",
+    "require": {
+        "laravel/framework": "^10.28"
+    },
     "license": "MIT",
     "autoload": {
         "psr-4": {
