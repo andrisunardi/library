@@ -2,12 +2,27 @@
 
 namespace Andrisunardi\Library;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 class Utils
 {
+    public static function boot()
+    {
+        Schema::defaultStringLength(191);
+
+        Model::preventLazyLoading();
+        Model::shouldBeStrict();
+
+        if (app()->isProduction()) {
+            URL::forceScheme('https');
+        }
+    }
+
     public static function phone(string $value = null): string
     {
         $value = Str::slug($value, '');
