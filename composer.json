@@ -3,7 +3,8 @@
     "description": "Library Andri Sunardi",
     "type": "library",
     "require": {
-        "laravel/framework": "^10.28"
+        "laravel/framework": "^10.28",
+        "livewire/livewire": "^3.0"
     },
     "license": "MIT",
     "autoload": {
