@@ -1,6 +1,6 @@
 <?php
 
-namespace Andrisunardi\Libraries;
+namespace Andrisunardi\Library\Libraries;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
