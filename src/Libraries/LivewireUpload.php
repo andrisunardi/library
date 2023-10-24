@@ -8,7 +8,7 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class LivewireUpload
 {
-    public function upload(
+    public static function upload(
         ?TemporaryUploadedFile $file,
         string $name = null,
         string $disk = 'images',
