@@ -4,4 +4,4 @@
     'navigate' => false,
 ])
 
-<x-link :class="$class" :text="$value" :href="'tel:+' . Utils::phone($value)" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$value" :href="'tel:+' . Utils::phone($value)" :navigate="$navigate" />
