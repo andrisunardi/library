@@ -1,6 +1,6 @@
 <?php
 
-namespace Andrisunardi\Mail;
+namespace Andrisunardi\Library\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
