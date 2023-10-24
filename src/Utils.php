@@ -135,7 +135,7 @@ class Utils
         return $value == 1 ? 'bg-success' : 'bg-danger';
     }
 
-    public static function formatSymbol(string $value, string $symbol): string
+    public static function formatSymbol(string $value = null, string $symbol): string
     {
         return Str::replace(['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '[', '}', ']', '|', '\\', ':', ';', '"', "'", '<', ',', '>', '.', '?', '/', ' '], $symbol, $value);
     }
@@ -185,7 +185,7 @@ class Utils
         return $color;
     }
 
-    public static function formatBytes(string $value, $precision = 2): string
+    public static function formatBytes(string $value = null, $precision = 2): string
     {
         static $units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
         $step = 1024;
