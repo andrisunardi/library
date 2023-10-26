@@ -23,7 +23,7 @@ class Utils
         }
     }
 
-    public static function phone(string $value = null): string
+    public static function phone(string $value = null): string|null
     {
         $value = Str::slug($value, '');
 
@@ -40,107 +40,107 @@ class Utils
         return $value;
     }
 
-    public static function oddEven(string $value = null): string
+    public static function oddEven(string $value = null): string|null
     {
         return $value % 2 == 0 ? 'Even' : 'Odd';
     }
 
-    public static function percentage(string $value = null): string
+    public static function percentage(string $value = null): string|null
     {
         return round($value, 2);
     }
 
-    public static function thousand(string $value = null): string
+    public static function thousand(string $value = null): string|null
     {
         return number_format($value, 0, ',', '.');
     }
 
-    public static function rupiah(string $value = null): string
+    public static function rupiah(string $value = null): string|null
     {
         return 'Rp. '.number_format($value, 0, ',', '.');
     }
 
-    public static function idr(string $value = null): string
+    public static function idr(string $value = null): string|null
     {
         return 'IDR. '.number_format($value, 0, ',', '.');
     }
 
-    public static function dollar(string $value = null): string
+    public static function dollar(string $value = null): string|null
     {
         return '$ '.number_format($value, 0, ',', '.');
     }
 
-    public static function yesNo(string $value = null): string
+    public static function yesNo(string $value = null): string|null
     {
         return $value ? 'Yes' : 'No';
     }
 
-    public static function yaTidak(string $value = null): string
+    public static function yaTidak(string $value = null): string|null
     {
         return $value ? 'Ya' : 'Tidak';
     }
 
-    public static function active(string $value = null): string
+    public static function active(string $value = null): string|null
     {
         return $value ? 'Active' : 'Inactive';
     }
 
-    public static function aktif(string $value = null): string
+    public static function aktif(string $value = null): string|null
     {
         return $value ? 'Aktif' : 'Tidak Aktif';
     }
 
-    public static function show(string $value = null): string
+    public static function show(string $value = null): string|null
     {
         return $value ? 'Show' : 'Not Shown';
     }
 
-    public static function tampil(string $value = null): string
+    public static function tampil(string $value = null): string|null
     {
         return $value ? 'Tampil' : 'Tidak Tampil';
     }
 
-    public static function public(string $value = null): string
+    public static function public(string $value = null): string|null
     {
         return $value ? 'Public' : 'Not Public';
     }
 
-    public static function publik(string $value = null): string
+    public static function publik(string $value = null): string|null
     {
         return $value ? 'Publik' : 'Tidak Publik';
     }
 
-    public static function pastor(string $value = null): string
+    public static function pastor(string $value = null): string|null
     {
         return $value ? 'Pastor' : 'Not Pastor';
     }
 
-    public static function subscribe(string $value = null): string
+    public static function subscribe(string $value = null): string|null
     {
         return $value ? 'Subscribe' : 'Unsubscribe';
     }
 
-    public static function successDanger(string $value = null): string
+    public static function successDanger(string $value = null): string|null
     {
         return $value == 1 ? 'success' : 'danger';
     }
 
-    public static function textSuccessDanger(string $value = null): string
+    public static function textSuccessDanger(string $value = null): string|null
     {
         return $value == 1 ? 'text-success' : 'text-danger';
     }
 
-    public static function bgSuccessDanger(string $value = null): string
+    public static function bgSuccessDanger(string $value = null): string|null
     {
         return $value == 1 ? 'bg-success' : 'bg-danger';
     }
 
-    public static function formatSymbol(string $value = null, string $symbol): string
+    public static function formatSymbol(string $value = null, string $symbol): string|null
     {
         return Str::replace(['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '[', '}', ']', '|', '\\', ':', ';', '"', "'", '<', ',', '>', '.', '?', '/', ' '], $symbol, $value);
     }
 
-    public static function color(string $value = null): string
+    public static function color(string $value = null): string|null
     {
         if ($value % 1 == 0) {
             $color = 'primary';
@@ -164,7 +164,7 @@ class Utils
         return $color;
     }
 
-    public static function logColor(string $value = null): string
+    public static function logColor(string $value = null): string|null
     {
         if ($value == 1) {
             $color = 'primary';
@@ -185,7 +185,7 @@ class Utils
         return $color;
     }
 
-    public static function formatBytes(string $value = null, $precision = 2): string
+    public static function formatBytes(string $value = null, $precision = 2): string|null
     {
         static $units = ['B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
         $step = 1024;
@@ -198,17 +198,17 @@ class Utils
         return round($value, $precision).$units[$i];
     }
 
-    public static function translate(string $value = null): string
+    public static function translate(string $value = null): string|null
     {
         return $value ? trans('index.'.Str::snake(Str::headline($value))) : null;
     }
 
-    public static function setting(string $value = null): string
+    public static function setting(string $value = null): string|null
     {
         return DB::table('settings')->where('key', $value)->first()->value ?? null;
     }
 
-    public static function code(string $prefix, string $table, int $digit, string $date = null): string
+    public static function code(string $prefix, string $table, int $digit, string $date = null): string|null
     {
         $data = DB::table($table)->latest('id')->first();
         $code = Str::afterLast($data?->code, $prefix);
