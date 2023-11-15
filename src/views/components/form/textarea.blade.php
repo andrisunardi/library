@@ -4,6 +4,7 @@
     'icon' => 'fas fa-file-lines',
     'minlength' => 1,
     'maxlength' => 65535,
+    'rows' => null,
     'required' => false,
     'label' => true,
     'autocapitalize' => 'on',
@@ -22,8 +23,8 @@
     <textarea
         class="form-control @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
         wire:model="{{ $key }}" id="{{ $key }}" minlength="{{ $minlength }}"
-        maxlength="{{ $maxlength }}" placeholder="{{ $title }}" {{ $required ? 'required' : null }}
-        autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}>
+        maxlength="{{ $maxlength }}" rows={{ $rows }} placeholder="{{ $title }}"
+        {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}>
     </textarea>
 
     @error($key)
