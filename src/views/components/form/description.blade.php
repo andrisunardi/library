@@ -4,11 +4,12 @@
     'icon' => 'fas fa-file-lines',
     'minlength' => 1,
     'maxlength' => 65535,
+    'rows' => null,
     'required' => false,
     'label' => true,
     'autocapitalize' => 'on',
     'autofocus' => false,
 ])
 
-<x-components::form.textarea :key="$key" :title="$title" :icon="$icon" :minlength="$minlength"
-    :maxlength="$maxlength" :required="$required" :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" />
+<x-components::form.textarea :key="$key" :title="$title" :icon="$icon" :minlength="$minlength" :maxlength="$maxlength"
+    :rows="$rows" :required="$required" :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" />
