@@ -6,6 +6,7 @@
     'valueAttribute' => 'id',
     'textAttribute' => 'name',
     'label' => true,
+    'required' => false,
     'multiple' => false,
 ])
 
@@ -19,7 +20,7 @@
     @endif
 
     <select class="form-select select2" wire:model="{{ $key }}" id="{{ $key }}"
-        {{ $multiple ? 'multiple' : null }}>
+        {{ $multiple ? 'multiple' : null }} {{ $required ? 'required' : null }}>
         <option value="">{{ trans('index.all') }} {{ $title }}</option>
         @foreach ($datas as $data)
             <option value="{{ $data[$valueAttribute] ?? $data }}"

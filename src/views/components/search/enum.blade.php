@@ -6,11 +6,12 @@
     'valueAttribute' => 'value',
     'textAttribute' => 'name',
     'label' => true,
+    'required' => false,
     'multiple' => false,
 ])
 
 @if ($label)
-    <x-components::form.label :key="$key" :title="$title" />
+    <x-components::form.label :key="$key" :title="$title" :required="$required" />
 @endif
 
 <div class="input-group">
@@ -19,7 +20,7 @@
     @endif
 
     <select class="form-select select2" wire:model="{{ $key }}" id="{{ $key }}"
-        {{ $multiple ? 'multiple' : null }}>
+        {{ $multiple ? 'multiple' : null }} {{ $required ? 'required' : null }}>
         <option value="">{{ trans('index.all') }} {{ $title }}</option>
         @foreach ($datas as $data)
             <option value="{{ $data->$valueAttribute }}" {{ $data->$valueAttribute == $this->$key ? 'selected' : null }}>
