@@ -5,6 +5,8 @@
     'type' => 'time',
     'step' => 1,
     'label' => true,
+    'required' => true,
 ])
 
-<x-components::search :key="$key" :title="$title" :icon="$icon" :type="$type" :step="$step" :label="$label" />
+<x-components::search :key="$key" :title="$title" :icon="$icon" :type="$type" :step="$step"
+    :label="$label" :required="$required" />
