@@ -1,5 +1,6 @@
 @props([
     'class' => null,
+    'id' => null,
     'key' => null,
     'title' => null,
     'datas' => [],
@@ -9,6 +10,7 @@
     'checked' => false,
     'required' => false,
     'disabled' => false,
+    'helper' => null,
 ])
 
 @if ($label)
@@ -19,7 +21,7 @@
     <div class="form-check">
         <input
             class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-            type="checkbox" wire:model="{{ $key }}" id="{{ $key }}_{{ $data[$valueAttribute] }}"
+            type="checkbox" wire:model="{{ $key }}" id="{{ $id ?? $key }}_{{ $data[$valueAttribute] }}"
             name="{{ $key }}" value="{{ $data[$valueAttribute] }}" {{ $checked ? 'checked' : null }}
             {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
 
@@ -37,3 +39,9 @@
         @endif
     </div>
 @endforeach
+
+@if ($helper)
+    <div class="form-text mb-3">
+        {{ $helper }}
+    </div>
+@endif

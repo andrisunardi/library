@@ -1,5 +1,6 @@
 @props([
     'class' => null,
+    'id' => null,
     'key' => null,
     'title' => null,
     'icon' => null,
@@ -12,11 +13,11 @@
     'label' => true,
     'step' => null,
     'accept' => null,
-    'helper' => null,
     'autocapitalize' => 'on',
     'autocomplete' => 'off',
     'autofocus' => false,
     'disabled' => false,
+    'helper' => null,
 ])
 
 @if ($label)
@@ -30,7 +31,7 @@
 
     <input
         class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model="{{ $key }}" id="{{ $key }}" type="{{ $type }}" min="{{ $min }}"
+        wire:model="{{ $key }}" id="{{ $id ?? $key }}" type="{{ $type }}" min="{{ $min }}"
         max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}"
         step="{{ $step }}" accept="{{ $accept }}" placeholder="{{ $title }}"
         {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" autocomplete="{{ $autocomplete }}"

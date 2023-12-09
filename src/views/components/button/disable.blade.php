@@ -1,7 +1,7 @@
 @props([
     'class' => null,
     'key' => 'disable',
-    'text' => 'Disable',
+    'text' => trans('index.disable'),
     'icon' => 'fas fa-xmark',
     'color' => 'warning',
     'size' => 'sm',

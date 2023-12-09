@@ -1,9 +1,9 @@
 @props([
     'class' => null,
     'id' => null,
-    'key' => 'phone',
-    'title' => trans('validation.attributes.phone'),
-    'icon' => 'fas fa-phone',
+    'key' => 'whatsapp',
+    'title' => trans('validation.attributes.whatsapp'),
+    'icon' => 'fab fa-whatsapp',
     'type' => 'number',
     'min' => 0,
     'max' => 999999999999999,

@@ -1,7 +1,7 @@
 @props([
     'class' => null,
     'key' => 'edit',
-    'text' => 'Edit',
+    'text' => trans('index.edit'),
     'icon' => 'fas fa-edit',
     'color' => 'success',
     'size' => 'sm',

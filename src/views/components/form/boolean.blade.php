@@ -1,5 +1,6 @@
 @props([
     'class' => null,
+    'id' => null,
     'key' => null,
     'title' => null,
     'type' => 'radio',
@@ -9,6 +10,7 @@
     'second' => true,
     'textSecond' => null,
     'disabled' => false,
+    'helper' => null,
 ])
 
 @if ($label)
@@ -18,7 +20,7 @@
 <div class="form-check">
     <input
         class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        type="{{ $type }}" wire:model="{{ $key }}" id="{{ $key }}_1" name="{{ $key }}"
+        type="{{ $type }}" wire:model="{{ $key }}" id="{{ $id ?? $key }}_1" name="{{ $key }}"
         value="1" {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
 
     <label class="form-check-label" for="{{ $key }}_1"
@@ -39,7 +41,7 @@
     <div class="form-check">
         <input
             class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-            type="{{ $type }}" wire:model="{{ $key }}" id="{{ $key }}_0"
+            type="{{ $type }}" wire:model="{{ $key }}" id="{{ $id ?? $key }}_0"
             name="{{ $key }}" value="0" {{ $required ? 'required' : null }}
             {{ $disabled ? 'disabled' : null }}>
 
@@ -53,5 +55,11 @@
         @else
             <div class="valid-feedback">{{ trans('validation.success') }}</div>
         @enderror
+    </div>
+@endif
+
+@if ($helper)
+    <div class="form-text mb-3">
+        {{ $helper }}
     </div>
 @endif

@@ -1,4 +1,6 @@
 @props([
+    'class' => null,
+    'id' => null,
     'key' => null,
     'title' => null,
     'icon' => 'fas fa-file-lines',
@@ -9,6 +11,8 @@
     'label' => true,
     'autocapitalize' => 'on',
     'autofocus' => false,
+    'disabled' => false,
+    'helper' => null,
 ])
 
 @if ($label)
@@ -21,10 +25,11 @@
     @endif
 
     <textarea
-        class="form-control @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model="{{ $key }}" id="{{ $key }}" minlength="{{ $minlength }}"
+        class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
+        wire:model="{{ $key }}" id="{{ $id ?? $key }}" minlength="{{ $minlength }}"
         maxlength="{{ $maxlength }}" rows={{ $rows }} placeholder="{{ $title }}"
-        {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}>
+        {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}
+        {{ $disabled ? 'disabled' : null }}>
     </textarea>
 
     @error($key)
@@ -33,3 +38,9 @@
         <div class="valid-feedback">{{ trans('validation.success') }}</div>
     @enderror
 </div>
+
+@if ($helper)
+    <div class="form-text mb-3">
+        {{ $helper }}
+    </div>
+@endif

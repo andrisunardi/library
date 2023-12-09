@@ -1,4 +1,5 @@
 @props([
+    'class' => null,
     'key' => 'submit',
     'text' => trans('index.submit'),
     'icon' => 'fas fa-floppy-disk',
@@ -6,4 +7,5 @@
     'color' => 'primary',
 ])
 
-<x-components::button :key="$key" :text="$text" :type="'submit'" :icon="$icon" :color="$color" />
+<x-components::button :class="$class" :key="$key" :text="$text" :type="'submit'" :icon="$icon"
+    :color="$color" />

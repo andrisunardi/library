@@ -1,7 +1,7 @@
 @props([
     'class' => null,
     'key' => 'void',
-    'text' => 'Void',
+    'text' => trans('index.void'),
     'icon' => 'fas fa-ban',
     'color' => 'danger',
     'size' => 'sm',
