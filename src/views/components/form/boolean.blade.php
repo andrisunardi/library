@@ -1,4 +1,5 @@
 @props([
+    'class' => null,
     'key' => null,
     'title' => null,
     'type' => 'radio',
@@ -6,6 +7,8 @@
     'required' => true,
     'label' => true,
     'second' => true,
+    'textSecond' => null,
+    'disabled' => false,
 ])
 
 @if ($label)
@@ -14,9 +17,9 @@
 
 <div class="form-check">
     <input
-        class="form-check-input @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        type="{{ $type }}" wire:model="{{ $key }}" id="{{ $key }}_1"
-        name="{{ $key }}" value="1" {{ $required ? 'required' : null }}>
+        class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
+        type="{{ $type }}" wire:model="{{ $key }}" id="{{ $key }}_1" name="{{ $key }}"
+        value="1" {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
 
     <label class="form-check-label" for="{{ $key }}_1"
         @if ($errors->any()) {{ $errors->has($key) ? 'text-danger' : 'text-success' }} @endif>
@@ -35,13 +38,14 @@
 @if ($second)
     <div class="form-check">
         <input
-            class="form-check-input @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
+            class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
             type="{{ $type }}" wire:model="{{ $key }}" id="{{ $key }}_0"
-            name="{{ $key }}" value="0" {{ $required ? 'required' : null }}>
+            name="{{ $key }}" value="0" {{ $required ? 'required' : null }}
+            {{ $disabled ? 'disabled' : null }}>
 
         <label class="form-check-label" for="{{ $key }}_0"
             @if ($errors->any()) {{ $errors->has($key) ? 'text-danger' : 'text-success' }} @endif>
-            {{ trans('index.no') }}
+            {{ $textSecond ?? trans('index.no') }}
         </label>
 
         @error($key)

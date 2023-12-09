@@ -1,9 +1,9 @@
 @props([
     'class' => null,
-    'key' => 'exportToPdf',
-    'text' => trans('index.export_to_pdf'),
-    'icon' => 'fas fa-file-pdf',
-    'color' => 'danger',
+    'key' => 'disable',
+    'text' => 'Disable',
+    'icon' => 'fas fa-xmark',
+    'color' => 'warning',
     'size' => 'sm',
     'width' => '100',
     'confirm' => false,

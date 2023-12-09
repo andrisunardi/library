@@ -1,8 +1,8 @@
 @props([
     'class' => null,
-    'key' => 'exportToPdf',
-    'text' => trans('index.export_to_pdf'),
-    'icon' => 'fas fa-file-pdf',
+    'key' => 'void',
+    'text' => 'Void',
+    'icon' => 'fas fa-ban',
     'color' => 'danger',
     'size' => 'sm',
     'width' => '100',

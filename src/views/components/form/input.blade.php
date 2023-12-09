@@ -1,4 +1,5 @@
 @props([
+    'class' => null,
     'key' => null,
     'title' => null,
     'icon' => null,
@@ -15,6 +16,7 @@
     'autocapitalize' => 'on',
     'autocomplete' => 'off',
     'autofocus' => false,
+    'disabled' => false,
 ])
 
 @if ($label)
@@ -27,12 +29,12 @@
     @endif
 
     <input
-        class="form-control @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
+        class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
         wire:model="{{ $key }}" id="{{ $key }}" type="{{ $type }}" min="{{ $min }}"
-        max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}" step="{{ $step }}"
-        accept="{{ $accept }}" placeholder="{{ $title }}" {{ $required ? 'required' : null }}
-        autocapitalize="{{ $autocapitalize }}" autocomplete="{{ $autocomplete }}"
-        {{ $autofocus ? 'autofocus' : null }} />
+        max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}"
+        step="{{ $step }}" accept="{{ $accept }}" placeholder="{{ $title }}"
+        {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" autocomplete="{{ $autocomplete }}"
+        {{ $autofocus ? 'autofocus' : null }} {{ $disabled ? 'disabled' : null }} />
 
     @error($key)
         <div class="invalid-feedback">{{ $message }}</div>

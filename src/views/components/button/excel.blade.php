@@ -1,9 +1,9 @@
 @props([
     'class' => null,
-    'key' => 'exportToPdf',
-    'text' => trans('index.export_to_pdf'),
-    'icon' => 'fas fa-file-pdf',
-    'color' => 'danger',
+    'key' => 'excel',
+    'text' => trans('index.excel'),
+    'icon' => 'fas fa-file-excel',
+    'color' => 'success',
     'size' => 'sm',
     'width' => '100',
     'confirm' => false,

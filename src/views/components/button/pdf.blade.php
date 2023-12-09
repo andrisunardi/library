@@ -1,7 +1,7 @@
 @props([
     'class' => null,
-    'key' => 'exportToPdf',
-    'text' => trans('index.export_to_pdf'),
+    'key' => 'pdf',
+    'text' => trans('index.pdf'),
     'icon' => 'fas fa-file-pdf',
     'color' => 'danger',
     'size' => 'sm',
