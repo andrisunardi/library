@@ -1,4 +1,6 @@
 @props([
+    'class' => null,
+    'id' => null,
     'key' => 'number',
     'title' => trans('validation.attributes.percentage'),
     'icon' => 'fas fa-percentage',
@@ -10,7 +12,10 @@
     'required' => false,
     'label' => true,
     'autofocus' => false,
+    'disabled' => false,
+    'helper' => null,
 ])
 
-<x-components::form.input :key="$key" :title="$title" :icon="$icon" :type="$type" :min="$min"
-    :max="$max" :minlength="$minlength" :maxlength="$maxlength" :required="$required" :label="$label" :autofocus="$autofocus" />
+<x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
+    :type="$type" :min="$min" :max="$max" :minlength="$minlength" :maxlength="$maxlength" :required="$required"
+    :label="$label" :autofocus="$autofocus" :disabled="$disabled" :helper="$helper" />

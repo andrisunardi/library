@@ -1,4 +1,6 @@
 @props([
+    'class' => null,
+    'id' => null,
     'key' => null,
     'title' => null,
     'icon' => null,
@@ -9,7 +11,10 @@
     'label' => true,
     'autocapitalize' => 'on',
     'autofocus' => false,
+    'disabled' => false,
+    'helper' => null,
 ])
 
-<x-components::form.input :key="$key" :title="$title" :icon="$icon" :type="$type" :minlength="$minlength"
-    :maxlength="$maxlength" :required="$required" :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" />
+<x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
+    :type="$type" :minlength="$minlength" :maxlength="$maxlength" :required="$required" :label="$label" :autocapitalize="$autocapitalize"
+    :autofocus="$autofocus" :disabled="$disabled" :helper="$helper" />

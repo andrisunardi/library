@@ -1,4 +1,6 @@
 @props([
+    'class' => null,
+    'id' => null,
     'key' => 'time',
     'title' => trans('validation.attributes.time'),
     'icon' => 'fas fa-clock',
@@ -6,7 +8,9 @@
     'step' => 1,
     'required' => false,
     'label' => true,
+    'disabled' => true,
+    'helper' => true,
 ])
 
-<x-components::form.input :key="$key" :title="$title" :icon="$icon" :type="$type" :step="$step"
-    :required="$required" :label="$label" />
+<x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
+    :type="$type" :step="$step" :required="$required" :label="$label" :disabled="$disabled" :helper="$helper" />

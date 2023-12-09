@@ -1,4 +1,6 @@
 @props([
+    'class' => null,
+    'id' => null,
     'key' => 'search',
     'title' => trans('validation.attributes.search'),
     'icon' => 'fas fa-search',
@@ -13,6 +15,7 @@
     'autofocus' => false,
     'step' => null,
     'accept' => null,
+    'disabled' => null,
     'helper' => null,
 ])
 
@@ -25,7 +28,7 @@
         <x-components::search.icon :key="$key" :icon="$icon" />
     @endif
 
-    <input class="form-control" wire:model.live="{{ $key }}" id="{{ $key }}" type="{{ $type }}"
+    <input class="form-control" wire:model.live="{{ $key }}" id="{{ $id ?? $key }}" type="{{ $type }}"
         min="{{ $min }}" max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}"
         step="{{ $step }}" accept="{{ $accept }}" placeholder="{{ $title }}"
         {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}"

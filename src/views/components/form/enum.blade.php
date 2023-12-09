@@ -1,4 +1,6 @@
 @props([
+    'class' => null,
+    'id' => null,
     'key' => null,
     'title' => null,
     'icon' => null,
@@ -8,6 +10,8 @@
     'required' => false,
     'label' => true,
     'multiple' => false,
+    'disabled' => false,
+    'helper' => null,
 ])
 
 @if ($label)
@@ -20,12 +24,13 @@
     @endif
 
     <select
-        class="form-select select2 @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model="{{ $key }}" id="{{ $key }}" {{ $multiple ? 'multiple' : null }}
-        {{ $required ? 'required' : null }}>
+        class="form-select select2 {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
+        wire:model="{{ $key }}" id="{{ $id ?? $key }}" {{ $multiple ? 'multiple' : null }}
+        {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
         <option value="">{{ trans('index.select') }} {{ $title }}</option>
         @foreach ($datas as $data)
-            <option value="{{ $data->$valueAttribute }}" {{ $data->$valueAttribute == $this->$key ? 'selected' : null }}>
+            <option value="{{ $data->$valueAttribute }}"
+                {{ $data->$valueAttribute == $this->$key ? 'selected' : null }}>
                 {{ Utils::translate($data->$textAttribute) }}
             </option>
         @endforeach
@@ -37,6 +42,12 @@
         <div class="valid-feedback">{{ trans('validation.success') }}</div>
     @enderror
 </div>
+
+@if ($helper)
+    <div class="form-text mb-3">
+        {{ $helper }}
+    </div>
+@endif
 
 @push('script')
     <script>
