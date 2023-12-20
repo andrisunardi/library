@@ -1,16 +1,18 @@
 @props([
+    'class' => null,
     'key' => null,
     'text' => null,
     'icon' => null,
     'position' => 'left',
     'type' => 'button',
     'color' => 'primary',
-    'size' => 'btn-md',
-    'width' => 'w-100',
+    'size' => 'md',
+    'width' => '100',
     'confirm' => null,
 ])
 
-<button type="{{ $type }}" class="btn btn-{{ $color }} {{ $size }} {{ $width }}"
+<button type="{{ $type }}"
+    class="btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} {{ $class }}"
     @if ($type != 'submit') wire:click="{{ $key }}" @endif wire:loading.attr="disabled"
     @if ($confirm) onclick="return confirm('{{ $confirm }} ?') || event.stopImmediatePropagation()" @endif>
 
@@ -19,7 +21,7 @@
             <span class="{{ $icon }} fa-fw"></span>
         @endif
 
-        {{ $text }}
+        {!! $text !!}
 
         @if ($icon && $position == 'right')
             <span class="{{ $icon }} fa-fw"></span>
