@@ -18,7 +18,7 @@
         @endif
 
         <div>
-            {{ $text }}
+            {!! $text !!}
         </div>
     </div>
 </div>
