@@ -1,15 +1,17 @@
 @props([
-    'class' => null,
+    'draggable' => 'false',
     'href' => null,
     'src' => null,
-    'alt' => null,
-    'draggable' => 'false',
-    'width' => 'w-100',
     'target' => '_blank',
+    'navigate' => false,
+    'class' => null,
+    'width' => '100',
+    'alt' => null,
     'onerror' => '/images/image-not-available.png',
 ])
 
-<a draggable="{{ $draggable }}" href="{{ $href ?? $src }}" target="{{ $target }}">
-    <img draggable="{{ $draggable }}" src="{{ $src }}" class="{{ $class }} {{ $width }}"
+<a draggable="{{ $draggable }}" href="{{ $href ?? $src }}" target="{{ $target }}"
+    @if ($navigate) wire:navigate @endif>
+    <img draggable="{{ $draggable }}" src="{{ $src }}" class="{{ $class }} w-{{ $width }}"
         alt="{{ $alt }}" onerror="this.src='{{ $onerror }}'" />
 </a>
