@@ -31,7 +31,7 @@
 
     <input
         class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model="{{ $key }}" id="{{ $id ?? $key }}" type="{{ $type }}" min="{{ $min }}"
+        wire:model.lazy="{{ $key }}" id="{{ $id ?? $key }}" type="{{ $type }}" min="{{ $min }}"
         max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}"
         step="{{ $step }}" accept="{{ $accept }}" placeholder="{{ $title }}"
         {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" autocomplete="{{ $autocomplete }}"
