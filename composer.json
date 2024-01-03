@@ -4,7 +4,8 @@
     "type": "library",
     "require": {
         "laravel/framework": "^10.28",
-        "livewire/livewire": "^3.0"
+        "livewire/livewire": "^3.0",
+        "buglinjo/laravel-webp": "^2.3"
     },
     "license": "MIT",
     "autoload": {

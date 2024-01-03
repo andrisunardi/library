@@ -2,7 +2,9 @@
 
 namespace Andrisunardi\Library\Libraries;
 
+use Buglinjo\LaravelWebp\Facades\Webp;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
@@ -16,16 +18,17 @@ class LivewireUpload
         string $checkAsset = null,
         string $fileAsset = null,
         bool $deleteAsset = false,
+        bool $useWebp = true,
     ): ?string {
         $fileName = now()->format('Y-m-d-H-i-s');
 
         if ($name) {
-            $fileName = Str::slug($name).'-'.now()->format('Y-m-d-H-i-s');
+            $fileName = Str::slug($name) . '-' . now()->format('Y-m-d-H-i-s');
         }
 
-        if (! $file) {
+        if (!$file) {
             if ($checkAsset) {
-                $fileName = "{$fileName}.".File::extension($fileAsset);
+                $fileName = "{$fileName}." . File::extension($fileAsset);
 
                 File::copy(
                     public_path("{$disk}/{$directory}/{$fileAsset}"),
@@ -42,8 +45,17 @@ class LivewireUpload
             File::delete(public_path("{$disk}/{$directory}/{$fileAsset}"));
         }
 
-        $fileName = "{$fileName}.{$file->extension()}";
-        $file->storePubliclyAs($directory, $fileName, $disk);
+        if ($file->extension() == 'webp') {
+            $useWebp = false;
+        }
+
+        if ($useWebp) {
+            $fileName = "{$fileName}.webp";
+            Webp::make($file)->quality(70)->save(Storage::disk($disk)->path("{$directory}/{$fileName}"));
+        } else {
+            $fileName = "{$fileName}.{$file->extension()}";
+            $file->storePubliclyAs($directory, $fileName, $disk);
+        }
 
         return $fileName;
     }
