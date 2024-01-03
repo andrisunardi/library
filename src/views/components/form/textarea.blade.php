@@ -27,7 +27,7 @@
     <textarea
         class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
         wire:model="{{ $key }}" id="{{ $id ?? $key }}" minlength="{{ $minlength }}"
-        maxlength="{{ $maxlength }}" rows={{ $rows }} placeholder="{{ $title }}"
+        maxlength="{{ $maxlength }}" rows="{{ $rows }}" placeholder="{{ $title }}"
         {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}
         {{ $disabled ? 'disabled' : null }}>
     </textarea>
