@@ -45,7 +45,8 @@ class LivewireUpload
             File::delete(public_path("{$disk}/{$directory}/{$fileAsset}"));
         }
 
-        if ($file->extension() == 'webp') {
+        $extensionImages = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+        if ($file->extension() == 'webp' || !in_array($file->extension(), $extensionImages)) {
             $useWebp = false;
         }
 
