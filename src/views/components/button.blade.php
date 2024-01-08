@@ -8,28 +8,25 @@
     'color' => 'primary',
     'size' => 'md',
     'width' => '100',
+    'disabled' => false,
     'confirm' => null,
 ])
 
 <button type="{{ $type }}"
-    class="btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} {{ $class }}"
+    class="btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} {{ $class }} {{ $disabled ? 'disabled' : null }}"
     @if ($type != 'submit') wire:click="{{ $key }}" @endif wire:loading.attr="disabled"
-    @if ($confirm) onclick="return confirm('{{ $confirm }} ?') || event.stopImmediatePropagation()" @endif>
+    @if ($confirm) onclick="return confirm('{{ $confirm }} ?') || event.stopImmediatePropagation()" @endif
+    {{ $disabled ? 'disabled' : null }}>
 
-    <div wire:loading.remove wire:target="{{ $key }}">
-        @if ($icon && $position == 'left')
-            <span class="{{ $icon }} fa-fw"></span>
-        @endif
+    @if ($icon && $position == 'left')
+        <span class="{{ $icon }} fa-fw"></span>
+    @endif
 
-        {!! $text !!}
+    {!! $text !!}
 
-        @if ($icon && $position == 'right')
-            <span class="{{ $icon }} fa-fw"></span>
-        @endif
-    </div>
+    @if ($icon && $position == 'right')
+        <span class="{{ $icon }} fa-fw"></span>
+    @endif
 
-    <div wire:loading wire:target="{{ $key }}">
-        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-        <span role="status">{{ trans('index.loading') }}...</span>
-    </div>
+    <span class="spinner-border spinner-border-sm" wire:loading wire:target="{{ $key }}"></span>
 </button>
