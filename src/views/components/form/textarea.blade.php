@@ -40,7 +40,7 @@
 </div>
 
 @if ($helper)
-    <div class="form-text mb-3">
+    <div class="form-text">
         {{ $helper }}
     </div>
 @endif
