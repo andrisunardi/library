@@ -15,6 +15,7 @@
     'autofocus' => false,
     'step' => null,
     'accept' => null,
+    'readonly' => null,
     'disabled' => null,
     'helper' => null,
 ])
@@ -32,7 +33,8 @@
         min="{{ $min }}" max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}"
         step="{{ $step }}" accept="{{ $accept }}" placeholder="{{ $title }}"
         {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}"
-        {{ $autofocus ? 'autofocus' : null }} />
+        {{ $autofocus ? 'autofocus' : null }} {{ $readonly ? 'readonly' : null }}
+        {{ $disabled ? 'disabled' : null }} />
 
     @error($key)
         <div class="invalid-feedback">{{ $message }}</div>

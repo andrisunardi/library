@@ -11,6 +11,7 @@
     'label' => true,
     'autocapitalize' => 'on',
     'autofocus' => false,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
 ])
@@ -29,7 +30,7 @@
         wire:model="{{ $key }}" id="{{ $id ?? $key }}" minlength="{{ $minlength }}"
         maxlength="{{ $maxlength }}" rows="{{ $rows }}" placeholder="{{ $title }}"
         {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}
-        {{ $disabled ? 'disabled' : null }}>
+        {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}>
     </textarea>
 
     @error($key)

@@ -8,9 +8,11 @@
     'step' => 1,
     'required' => false,
     'label' => true,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
 ])
 
 <x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-    :type="$type" :step="$step" :required="$required" :label="$label" :disabled="$disabled" :helper="$helper" />
+    :type="$type" :step="$step" :required="$required" :label="$label" :readonly="$readonly" :disabled="$disabled"
+    :helper="$helper" />

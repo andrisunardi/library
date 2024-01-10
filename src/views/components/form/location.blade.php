@@ -11,18 +11,20 @@
     'label' => true,
     'autocapitalize' => 'on',
     'autofocus' => false,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
 ])
 
 @if ($type == 'text')
     <x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-        :type="$type" :min="$min" :max="$max" :minlength="$minlength" :maxlength="$maxlength" :required="$required"
-        :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" :disabled="$disabled" :helper="$helper" />
+        :type="$type" :minlength="$minlength" :maxlength="$maxlength" :required="$required"
+        :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled"
+        :helper="$helper" />
 @endif
 
 @if ($type == 'textarea')
     <x-components::form.textarea :class="$class" :key="$key" :title="$title" :icon="$icon"
         :minlength="$minlength" :maxlength="$maxlength" :rows="$rows" :required="$required" :label="$label"
-        :autocapitalize="$autocapitalize" :autofocus="$autofocus" :disabled="$disabled" :helper="$helper" />
+        :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
 @endif

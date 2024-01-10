@@ -16,6 +16,7 @@
     'autocapitalize' => 'on',
     'autocomplete' => 'off',
     'autofocus' => false,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
     'wire' => 'defer',
@@ -40,7 +41,7 @@
         type="{{ $type }}" min="{{ $min }}" max="{{ $max }}" minlength="{{ $minlength }}"
         maxlength="{{ $maxlength }}" step="{{ $step }}" accept="{{ $accept }}"
         placeholder="{{ $title }}" {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}"
-        autocomplete="{{ $autocomplete }}" {{ $autofocus ? 'autofocus' : null }}
+        autocomplete="{{ $autocomplete }}" {{ $autofocus ? 'autofocus' : null }} {{ $readonly ? 'readonly' : null }}
         {{ $disabled ? 'disabled' : null }} />
 
     @error($key)
