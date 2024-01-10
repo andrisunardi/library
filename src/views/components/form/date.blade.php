@@ -10,10 +10,11 @@
     'required' => false,
     'label' => true,
     'autofocus' => false,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
 ])
 
 <x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
     :type="$type" :min="$min" :max="$max" :required="$required" :label="$label" :autofocus="$autofocus"
-    :disabled="$disabled" :helper="$helper" />
+    :readonly="$readonly" :disabled="$disabled" :helper="$helper" />

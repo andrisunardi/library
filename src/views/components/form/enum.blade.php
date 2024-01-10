@@ -10,6 +10,7 @@
     'required' => false,
     'label' => true,
     'multiple' => false,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
 ])
@@ -26,7 +27,7 @@
     <select
         class="form-select select2 {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
         wire:model="{{ $key }}" id="{{ $id ?? $key }}" {{ $multiple ? 'multiple' : null }}
-        {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
+        {{ $required ? 'required' : null }} {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}>
         <option value="">{{ trans('index.select') }} {{ $title }}</option>
         @foreach ($datas as $data)
             <option value="{{ $data->$valueAttribute }}"

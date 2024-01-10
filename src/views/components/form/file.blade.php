@@ -9,10 +9,12 @@
     'label' => true,
     'helper' => null,
     'accept' => env('ACCEPT_FILE'),
+    'readonly' => false,
     'disabled' => false,
     'helper' =>
         trans('index.format') . ' : ' . env('FORMAT_FILE') . ' | ' . trans('index.size') . ' : ' . env('SIZE_FILE'),
 ])
 
 <x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-    :type="$type" :required="$required" :label="$label" :accept="$accept" :disabled="$disabled" :helper="$helper" />
+    :type="$type" :required="$required" :label="$label" :accept="$accept" :readonly="$readonly" :disabled="$disabled"
+    :helper="$helper" />

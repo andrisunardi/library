@@ -9,6 +9,7 @@
     'label' => true,
     'checked' => false,
     'required' => false,
+    'readonly' => false,
     'disabled' => false,
     'helper' => null,
 ])
@@ -23,7 +24,8 @@
             class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
             type="radio" wire:model="{{ $key }}" id="{{ $id ?? $key }}_{{ $data[$valueAttribute] }}"
             name="{{ $key }}" value="{{ $data[$valueAttribute] }}" {{ $checked ? 'checked' : null }}
-            {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
+            {{ $required ? 'required' : null }} {{ $readonly ? 'readonly' : null }}
+            {{ $disabled ? 'disabled' : null }}>
 
         <label class="form-check-label" for="{{ $key }}_{{ $data[$valueAttribute] }}"
             @if ($errors->any()) {{ $errors->has($key) ? 'text-danger' : 'text-success' }} @endif>
