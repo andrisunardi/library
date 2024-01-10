@@ -18,6 +18,7 @@
     'autofocus' => false,
     'disabled' => false,
     'helper' => null,
+    'wire' => 'defer',
 ])
 
 @if ($label)
@@ -31,11 +32,16 @@
 
     <input
         class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model.lazy="{{ $key }}" id="{{ $id ?? $key }}" type="{{ $type }}" min="{{ $min }}"
-        max="{{ $max }}" minlength="{{ $minlength }}" maxlength="{{ $maxlength }}"
-        step="{{ $step }}" accept="{{ $accept }}" placeholder="{{ $title }}"
-        {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" autocomplete="{{ $autocomplete }}"
-        {{ $autofocus ? 'autofocus' : null }} {{ $disabled ? 'disabled' : null }} />
+        @if ($wire == 'defer') wire:model="{{ $key }}" @endif
+        @if ($wire == 'lazy') wire:model.lazy="{{ $key }}" @endif
+        @if ($wire == 'live') wire:model.live="{{ $key }}" @endif
+        @if ($wire == 'blur') wire:model.blur="{{ $key }}" @endif
+        @if ($wire == 'change') wire:model.change="{{ $key }}" @endif id="{{ $id ?? $key }}"
+        type="{{ $type }}" min="{{ $min }}" max="{{ $max }}" minlength="{{ $minlength }}"
+        maxlength="{{ $maxlength }}" step="{{ $step }}" accept="{{ $accept }}"
+        placeholder="{{ $title }}" {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}"
+        autocomplete="{{ $autocomplete }}" {{ $autofocus ? 'autofocus' : null }}
+        {{ $disabled ? 'disabled' : null }} />
 
     @error($key)
         <div class="invalid-feedback">{{ $message }}</div>
