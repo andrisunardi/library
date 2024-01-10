@@ -18,7 +18,7 @@
 
 @if ($type == 'text')
     <x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-        :type="$type" :min="$min" :max="$max" :minlength="$minlength" :maxlength="$maxlength" :required="$required"
+        :type="$type" :minlength="$minlength" :maxlength="$maxlength" :required="$required"
         :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled"
         :helper="$helper" />
 @endif
