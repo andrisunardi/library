@@ -47,7 +47,7 @@ class Utils
 
     public static function percentage(string $value = null): string|null
     {
-        return round($value, 2);
+        return round($value, 2) * 100 . '%';
     }
 
     public static function thousand(string $value = null): string|null
