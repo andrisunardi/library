@@ -10,10 +10,11 @@
     'width' => '100',
     'disabled' => false,
     'confirm' => null,
+    'active' => false,
 ])
 
 <button type="{{ $type }}"
-    class="btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} {{ $class }} {{ $disabled ? 'disabled' : null }}"
+    class="btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} {{ $class }} {{ $disabled ? 'disabled' : null }} {{ $active ? 'active' : null }}"
     @if ($type != 'submit') wire:click="{{ $key }}" @endif wire:loading.attr="disabled"
     @if ($confirm) onclick="return confirm('{{ $confirm }} ?') || event.stopImmediatePropagation()" @endif
     {{ $disabled ? 'disabled' : null }}>
