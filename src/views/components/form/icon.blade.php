@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'key' => null,
     'icon' => null,
 ])

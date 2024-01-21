@@ -1,4 +1,5 @@
 @props([
+    'wire' => 'defer',
     'class' => null,
     'id' => null,
     'key' => null,
@@ -26,8 +27,13 @@
 
     <select
         class="form-select select2 {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model="{{ $key }}" id="{{ $id ?? $key }}" {{ $multiple ? 'multiple' : null }}
-        {{ $required ? 'required' : null }} {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}>
+        @if ($wire == 'defer') wire:model="{{ $key }}" @endif
+        @if ($wire == 'lazy') wire:model.lazy="{{ $key }}" @endif
+        @if ($wire == 'live') wire:model.live="{{ $key }}" @endif
+        @if ($wire == 'blur') wire:model.blur="{{ $key }}" @endif
+        @if ($wire == 'change') wire:model.change="{{ $key }}" @endif id="{{ $id ?? $key }}"
+        {{ $multiple ? 'multiple' : null }} {{ $required ? 'required' : null }} {{ $readonly ? 'readonly' : null }}
+        {{ $disabled ? 'disabled' : null }}>
         <option value="">{{ trans('index.select') }} {{ $title }}</option>
         @foreach ($datas as $data)
             <option value="{{ $data[$valueAttribute] ?? $data }}"

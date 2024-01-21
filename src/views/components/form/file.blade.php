@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'class' => null,
     'id' => null,
     'key' => 'file',
@@ -15,6 +16,6 @@
         trans('index.format') . ' : ' . env('FORMAT_FILE') . ' | ' . trans('index.size') . ' : ' . env('SIZE_FILE'),
 ])
 
-<x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-    :type="$type" :required="$required" :label="$label" :accept="$accept" :readonly="$readonly" :disabled="$disabled"
-    :helper="$helper" />
+<x-components::form.input :wire="$wire" :class="$class" :id="$id" :key="$key" :title="$title"
+    :icon="$icon" :type="$type" :required="$required" :label="$label" :accept="$accept" :readonly="$readonly"
+    :disabled="$disabled" :helper="$helper" />

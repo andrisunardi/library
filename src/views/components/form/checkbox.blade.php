@@ -1,4 +1,5 @@
 @props([
+    'wire' => 'defer',
     'class' => null,
     'id' => null,
     'key' => null,
@@ -21,9 +22,14 @@
     <div class="form-check">
         <input
             class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-            type="checkbox" wire:model="{{ $key }}" id="{{ $id ?? $key }}_{{ $data[$valueAttribute] }}"
-            name="{{ $key }}" value="{{ $data[$valueAttribute] }}" {{ $checked ? 'checked' : null }}
-            {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
+            type="checkbox" @if ($wire == 'defer') wire:model="{{ $key }}" @endif
+            @if ($wire == 'lazy') wire:model.lazy="{{ $key }}" @endif
+            @if ($wire == 'live') wire:model.live="{{ $key }}" @endif
+            @if ($wire == 'blur') wire:model.blur="{{ $key }}" @endif
+            @if ($wire == 'change') wire:model.change="{{ $key }}" @endif
+            id="{{ $id ?? $key }}_{{ $data[$valueAttribute] }}" name="{{ $key }}"
+            value="{{ $data[$valueAttribute] }}" {{ $checked ? 'checked' : null }} {{ $required ? 'required' : null }}
+            {{ $disabled ? 'disabled' : null }}>
 
         <label class="form-check-label" for="{{ $key }}_{{ $data[$valueAttribute] }}"
             @if ($errors->any()) {{ $errors->has($key) ? 'text-danger' : 'text-success' }} @endif>

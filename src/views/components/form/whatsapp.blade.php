@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'class' => null,
     'id' => null,
     'key' => 'whatsapp',
@@ -18,6 +19,7 @@
     'helper' => null,
 ])
 
-<x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-    :type="$type" :min="$min" :max="$max" :minlength="$minlength" :maxlength="$maxlength" :required="$required"
-    :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
+<x-components::form.input :wire="$wire" :class="$class" :id="$id" :key="$key" :title="$title"
+    :icon="$icon" :type="$type" :min="$min" :max="$max" :minlength="$minlength" :maxlength="$maxlength"
+    :required="$required" :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled"
+    :helper="$helper" />

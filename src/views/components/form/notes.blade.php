@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'class' => null,
     'id' => null,
     'key' => 'notes',
@@ -16,6 +17,6 @@
     'helper' => null,
 ])
 
-<x-components::form.textarea :class="$class" :key="$key" :title="$title" :icon="$icon" :minlength="$minlength"
+<x-components::form.textarea :wire="$wire" :class="$class" :key="$key" :title="$title" :icon="$icon" :minlength="$minlength"
     :maxlength="$maxlength" :rows="$rows" :required="$required" :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus"
     :readonly="$readonly" :disabled="$disabled" :helper="$helper" />

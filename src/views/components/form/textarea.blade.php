@@ -1,4 +1,5 @@
 @props([
+    'wire' => 'defer',
     'class' => null,
     'id' => null,
     'key' => null,
@@ -27,10 +28,14 @@
 
     <textarea
         class="form-control {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        wire:model="{{ $key }}" id="{{ $id ?? $key }}" minlength="{{ $minlength }}"
-        maxlength="{{ $maxlength }}" rows="{{ $rows }}" placeholder="{{ $title }}"
-        {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}" {{ $autofocus ? 'autofocus' : null }}
-        {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}>
+        @if ($wire == 'defer') wire:model="{{ $key }}" @endif
+        @if ($wire == 'lazy') wire:model.lazy="{{ $key }}" @endif
+        @if ($wire == 'live') wire:model.live="{{ $key }}" @endif
+        @if ($wire == 'blur') wire:model.blur="{{ $key }}" @endif
+        @if ($wire == 'change') wire:model.change="{{ $key }}" @endif id="{{ $id ?? $key }}"
+        minlength="{{ $minlength }}" maxlength="{{ $maxlength }}" rows="{{ $rows }}"
+        placeholder="{{ $title }}" {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}"
+        {{ $autofocus ? 'autofocus' : null }} {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}>
     </textarea>
 
     @error($key)

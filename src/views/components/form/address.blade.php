@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'class' => null,
     'id' => null,
     'key' => 'address',
@@ -17,13 +18,14 @@
 ])
 
 @if ($type == 'text')
-    <x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-        :type="$type" :minlength="$minlength" :maxlength="$maxlength" :required="$required" :label="$label" :autocapitalize="$autocapitalize"
-        :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
+    <x-components::form.input :wire="$wire" :class="$class" :id="$id" :key="$key" :title="$title"
+        :icon="$icon" :type="$type" :minlength="$minlength" :maxlength="$maxlength" :required="$required" :label="$label"
+        :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
 @endif
 
 @if ($type == 'textarea')
-    <x-components::form.textarea :class="$class" :key="$key" :title="$title" :icon="$icon"
-        :minlength="$minlength" :maxlength="$maxlength" :rows="$rows" :required="$required" :label="$label"
-        :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
+    <x-components::form.textarea :wire="$wire" :class="$class" :key="$key" :title="$title"
+        :icon="$icon" :minlength="$minlength" :maxlength="$maxlength" :rows="$rows" :required="$required"
+        :label="$label" :autocapitalize="$autocapitalize" :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled"
+        :helper="$helper" />
 @endif

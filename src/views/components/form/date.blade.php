@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'class' => null,
     'id' => null,
     'key' => 'date',
@@ -15,6 +16,6 @@
     'helper' => null,
 ])
 
-<x-components::form.input :class="$class" :id="$id" :key="$key" :title="$title" :icon="$icon"
-    :type="$type" :min="$min" :max="$max" :required="$required" :label="$label" :autofocus="$autofocus"
-    :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
+<x-components::form.input :wire="$wire" :class="$class" :id="$id" :key="$key" :title="$title"
+    :icon="$icon" :type="$type" :min="$min" :max="$max" :required="$required" :label="$label"
+    :autofocus="$autofocus" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
