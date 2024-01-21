@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'title' => trans('index.form_validation'),
     'type' => 'html',
     'text' => implode('', $errors->all(':message<br>')),

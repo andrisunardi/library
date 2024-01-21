@@ -1,4 +1,5 @@
 @props([
+    'wire' => null,
     'class' => null,
     'id' => null,
     'key' => 'image',
@@ -14,5 +15,6 @@
         trans('index.format') . ' : ' . env('FORMAT_IMAGE') . ' | ' . trans('index.size') . ' : ' . env('SIZE_IMAGE'),
 ])
 
-<x-components::form.input :key="$key" :title="$title" :icon="$icon" :type="$type" :required="$required"
-    :label="$label" :accept="$accept" :readonly="$readonly" :disabled="$disabled" :helper="$helper" />
+<x-components::form.input :wire="$wire" :class="$class" :id="$id" :key="$key" :title="$title"
+    :icon="$icon" :type="$type" :required="$required" :label="$label" :accept="$accept" :readonly="$readonly"
+    :disabled="$disabled" :helper="$helper" />
