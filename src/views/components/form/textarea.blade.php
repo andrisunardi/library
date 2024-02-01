@@ -35,8 +35,7 @@
         @if ($wire == 'change') wire:model.change="{{ $key }}" @endif id="{{ $id ?? $key }}"
         minlength="{{ $minlength }}" maxlength="{{ $maxlength }}" rows="{{ $rows }}"
         placeholder="{{ $title }}" {{ $required ? 'required' : null }} autocapitalize="{{ $autocapitalize }}"
-        {{ $autofocus ? 'autofocus' : null }} {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}>
-    </textarea>
+        {{ $autofocus ? 'autofocus' : null }} {{ $readonly ? 'readonly' : null }} {{ $disabled ? 'disabled' : null }}></textarea>
 
     @error($key)
         <div class="invalid-feedback">{{ $message }}</div>
