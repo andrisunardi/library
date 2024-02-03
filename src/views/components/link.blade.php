@@ -8,7 +8,7 @@
     'target' => null,
     'confirm' => null,
     'download' => false,
-    'navigate' => true,
+    'navigate' => false,
 ])
 
 <a draggable="{{ $draggable }}" class="{{ $class }}" href="{{ $href }}" target="{{ $target }}"
