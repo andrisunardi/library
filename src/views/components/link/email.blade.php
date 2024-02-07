@@ -1,7 +1,8 @@
 @props([
-    'class' => 'text-decoration-none',
+    'class' => null,
     'value' => null,
+    'icon' => 'fas fa-envelope',
     'navigate' => false,
 ])
 
-<x-components::link :class="$class" :text="$value" :href="'mailto:' . $value" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$value" :href="'mailto:' . $value" :icon="$icon" :navigate="$navigate" />

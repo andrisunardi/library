@@ -1,8 +1,9 @@
 @props([
-    'class' => 'text-decoration-none',
+    'class' => null,
     'value' => null,
     'text' => null,
     'target' => '_blank',
+    'icon' => 'fab fa-whatsapp',
     'navigate' => false,
 ])
 

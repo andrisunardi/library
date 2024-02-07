@@ -1,8 +1,8 @@
 @props([
     'class' => null,
-    'text' => trans('index.view'),
-    'icon' => 'fas fa-eye',
-    'color' => 'dark',
+    'text' => trans('index.deactive'),
+    'icon' => 'fas fa-times',
+    'color' => 'danger',
     'size' => 'md',
     'width' => '100',
     'href' => null,
@@ -12,4 +12,4 @@
 ])
 
 <x-components::link :class="$class" :text="$text" :icon="$icon" :color="$color" :size="$size"
-    :width="$width" :href="$href" :target="$target" :button="$button" :navigate="$navigate" />
+    :width="$width" :href="$href" :target="$target" :button="$button":navigate="$navigate" />

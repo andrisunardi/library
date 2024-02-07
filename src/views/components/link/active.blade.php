@@ -1,16 +1,15 @@
 @props([
-    'id' => null,
     'class' => null,
-    'text' => null,
-    'icon' => null,
+    'text' => trans('index.active'),
+    'icon' => 'fas fa-check',
+    'color' => 'success',
+    'size' => 'md',
+    'width' => '100',
     'href' => null,
-    'value' => null,
-    'navigate' => false,
+    'target' => null,
+    'button' => true,
+    'navigate' => true,
 ])
 
-@php
-    $class = isset($class) ? $class : ($value ? 'btn btn-sm btn-danger w-100' : 'btn btn-sm btn-success w-100');
-@endphp
-
-<x-components::link :id="$id" :class="$class" :text="Utils::translate(Utils::active(!$value))" :icon="$value ? 'fas fa-times' : 'fas fa-check'" :href="$href"
-    :navigate="$navigate" />
+<x-components::link :class="$class" :text="$text" :icon="$icon" :color="$color" :size="$size"
+    :width="$width" :href="$href" :target="$target" :button="$button" :navigate="$navigate" />

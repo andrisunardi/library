@@ -1,6 +1,7 @@
 @props([
-    'class' => 'text-decoration-none',
+    'class' => null,
     'value' => null,
+    'icon' => 'fas fa-phone',
     'navigate' => false,
 ])
 
