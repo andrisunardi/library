@@ -13,12 +13,16 @@
     'download' => false,
     'navigate' => true,
     'button' => false,
+    'active' => false,
+    'disabled' => false,
 ])
 
-<a draggable="{{ $draggable }}" class="{{ $button ? "btn btn-{$color} btn-{$size} w-{$width}" : $class }}"
+<a draggable="{{ $draggable }}"
+    class="{{ $class }} @if ($button) btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} @endif @if ($active) active @endif @if ($disabled) disabled @endif"
     href="{{ $href }}" target="{{ $target }}"
     @if ($confirm) onclick="return confirm('{{ $confirm }} ?')" @endif
-    @if ($download) download @endif @if ($navigate) wire:navigate @endif>
+    @if ($download) download @endif @if ($navigate) wire:navigate @endif
+    @if ($disabled) disabled @endif>
 
     @if ($icon && $position == 'left')
         <span class="{{ $icon }} fa-fw"></span>
