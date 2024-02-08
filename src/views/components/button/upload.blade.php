@@ -4,7 +4,7 @@
     'text' => trans('index.upload'),
     'icon' => 'fas fa-upload',
     'color' => 'primary',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,

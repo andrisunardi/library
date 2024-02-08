@@ -4,7 +4,7 @@
     'text' => trans('index.pdf'),
     'icon' => 'fas fa-file-pdf',
     'color' => 'danger',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,

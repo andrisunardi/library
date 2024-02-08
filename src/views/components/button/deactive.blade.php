@@ -4,7 +4,7 @@
     'text' => trans('index.deactive'),
     'icon' => 'fas fa-xmark',
     'color' => 'danger',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,
