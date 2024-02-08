@@ -18,7 +18,7 @@
 <a draggable="{{ $draggable }}" class="{{ $button ? "btn btn-{$color} btn-{$size} w-{$width}" : $class }}"
     href="{{ $href }}" target="{{ $target }}"
     @if ($confirm) onclick="return confirm('{{ $confirm }} ?')" @endif
-    @if ($download) download @endif>
+    @if ($download) download @endif @if ($navigate) wire:navigate @endif>
 
     @if ($icon && $position == 'left')
         <span class="{{ $icon }} fa-fw"></span>
