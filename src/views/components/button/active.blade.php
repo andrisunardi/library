@@ -4,7 +4,7 @@
     'text' => trans('index.active'),
     'icon' => 'fas fa-check',
     'color' => 'success',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,

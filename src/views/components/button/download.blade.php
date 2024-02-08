@@ -4,7 +4,7 @@
     'text' => trans('index.download'),
     'icon' => 'fas fa-download',
     'color' => 'primary',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,

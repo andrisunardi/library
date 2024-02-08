@@ -4,7 +4,7 @@
     'text' => trans('index.edit'),
     'icon' => 'fas fa-edit',
     'color' => 'success',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,

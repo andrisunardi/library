@@ -4,10 +4,10 @@
     'text' => trans('index.delete'),
     'icon' => 'fas fa-trash',
     'color' => 'danger',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
-    'confirm' => null,
+    'confirm' => trans('index.delete'),
 ])
 
 <x-components::button :class="$class" :key="$key" :text="$text" :icon="$icon" :color="$color"

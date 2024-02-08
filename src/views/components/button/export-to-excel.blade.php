@@ -4,7 +4,7 @@
     'text' => trans('index.export_to_excel'),
     'icon' => 'fas fa-file-excel',
     'color' => 'success',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,

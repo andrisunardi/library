@@ -4,7 +4,7 @@
     'text' => trans('index.void'),
     'icon' => 'fas fa-ban',
     'color' => 'danger',
-    'size' => 'sm',
+    'size' => 'md',
     'width' => '100',
     'disabled' => false,
     'confirm' => false,
