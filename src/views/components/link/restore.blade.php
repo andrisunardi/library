@@ -1,10 +1,16 @@
 @props([
-    'class' => 'btn btn-sm btn-success w-100',
+    'class' => null,
     'text' => trans('index.restore'),
     'icon' => 'fas fa-trash-restore',
+    'color' => 'success',
+    'size' => 'md',
+    'width' => '100',
     'href' => null,
-    'confirm' => trans('index.restore'),
+    'target' => null,
+    'button' => true,
     'navigate' => false,
+    'confirm' => trans('index.restore'),
 ])
 
-<x-components::link :class="$class" :text="$text" :icon="$icon" :href="$href" :confirm="$confirm" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$text" :icon="$icon" :color="$color" :size="$size"
+    :width="$width" :href="$href" :target="$target" :button="$button" :navigate="$navigate" :confirm="$confirm" />

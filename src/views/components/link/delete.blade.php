@@ -1,10 +1,16 @@
 @props([
-    'class' => 'btn btn-sm btn-danger w-100',
+    'class' => null,
     'text' => trans('index.delete'),
     'icon' => 'fas fa-trash',
+    'color' => 'danger',
+    'size' => 'md',
+    'width' => '100',
     'href' => null,
+    'target' => null,
+    'button' => true,
+    'navigate' => true,
     'confirm' => trans('index.delete'),
-    'navigate' => false,
 ])
 
-<x-components::link :class="$class" :text="$text" :icon="$icon" :href="$href" :confirm="$confirm" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$text" :icon="$icon" :color="$color" :size="$size"
+    :width="$width" :href="$href" :target="$target" :button="$button" :navigate="$navigate" :confirm="$confirm" />

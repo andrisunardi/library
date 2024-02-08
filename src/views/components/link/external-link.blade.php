@@ -1,9 +1,12 @@
 @props([
-    'href' => null,
-    'class' => 'btn btn-link btn-sm',
+    'class' => null,
+    'text' => null,
     'icon' => 'fas fa-external-link',
+    'href' => null,
     'target' => '_blank',
+    'button' => false,
     'navigate' => false,
 ])
 
-<x-components::link :href="$href" :class="$class" :icon="$icon" :target="$target" :navigate="$navigate" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$text" :icon="$icon" :href="$href" :target="$target"
+    :button="$button" :navigate="$navigate" />

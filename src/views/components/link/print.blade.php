@@ -1,10 +1,15 @@
 @props([
-    'class' => 'btn btn-sm btn-dark w-100',
+    'class' => null,
     'text' => trans('index.print'),
     'icon' => 'fas fa-print',
+    'color' => 'dark',
+    'size' => 'md',
+    'width' => '100',
     'href' => null,
     'target' => null,
+    'button' => true,
     'navigate' => true,
 ])
 
-<x-components::link :class="$class" :text="$text" :icon="$icon" :href="$href" :target="$target" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$text" :icon="$icon" :color="$color" :size="$size"
+    :width="$width" :href="$href" :target="$target" :button="$button" :navigate="$navigate" />

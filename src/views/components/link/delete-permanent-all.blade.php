@@ -1,10 +1,16 @@
 @props([
-    'class' => 'btn btn-md btn-danger w-100',
-    'text' => trans('index.delete_permanent_all'),
+    'class' => null,
+    'text' => trans('index.delete_permanent') . ' ' . trans('index.all'),
     'icon' => 'fas fa-dumpster-fire',
+    'color' => 'danger',
+    'size' => 'md',
+    'width' => '100',
     'href' => null,
-    'confirm' => trans('index.delete_permanent_all'),
+    'target' => null,
+    'button' => true,
     'navigate' => false,
+    'confirm' => trans('index.delete_permanent_all'),
 ])
 
-<x-components::link :class="$class" :text="$text" :icon="$icon" :href="$href" :confirm="$confirm" :navigate="$navigate" />
+<x-components::link :class="$class" :text="$text" :icon="$icon" :color="$color" :size="$size"
+    :width="$width" :href="$href" :target="$target" :button="$button" :navigate="$navigate" :confirm="$confirm" />
