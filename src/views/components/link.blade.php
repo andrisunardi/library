@@ -17,7 +17,7 @@
     'disabled' => false,
 ])
 
-@if ($text)
+@if ($text || $text == 0)
     <a draggable="{{ $draggable }}"
         class="{{ $class }} @if ($button) btn btn-{{ $color }} btn-{{ $size }} w-{{ $width }} @endif @if ($active) active @endif @if ($disabled) disabled @endif"
         href="{{ $href }}" target="{{ $target }}"
