@@ -8,6 +8,7 @@
     'type' => 'text',
     'minlength' => 1,
     'maxlength' => 255,
+    'rows' => 3,
     'required' => false,
     'label' => true,
     'autocapitalize' => 'on',
