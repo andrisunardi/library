@@ -1,4 +1,5 @@
 @props([
+    'wire' => 'defer',
     'key' => null,
     'title' => null,
     'icon' => null,
@@ -19,7 +20,11 @@
         <x-components::search.icon :icon="$icon" />
     @endif
 
-    <select class="form-select select2" wire:model="{{ $key }}" id="{{ $key }}"
+    <select class="form-select select2" @if ($wire == 'defer') wire:model="{{ $key }}" @endif
+        @if ($wire == 'lazy') wire:model.lazy="{{ $key }}" @endif
+        @if ($wire == 'live') wire:model.live="{{ $key }}" @endif
+        @if ($wire == 'blur') wire:model.blur="{{ $key }}" @endif
+        @if ($wire == 'change') wire:model.change="{{ $key }}" @endif id="{{ $key }}"
         {{ $multiple ? 'multiple' : null }} {{ $required ? 'required' : null }}>
         <option value="">{{ trans('index.all') }} {{ $title }}</option>
         @foreach ($datas as $data)
