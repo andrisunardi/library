@@ -21,8 +21,13 @@
 <div class="form-check">
     <input
         class="form-check-input {{ $class }} {{ $disabled ? 'disabled' : null }} @if ($errors->any()) {{ $errors->has($key) ? 'is-invalid' : 'is-valid' }} @endif"
-        type="{{ $type }}" wire:model="{{ $key }}" id="{{ $id ?? $key }}_1" name="{{ $key }}"
-        value="1" {{ $required ? 'required' : null }} {{ $disabled ? 'disabled' : null }}>
+        type="{{ $type }}" @if ($wire == 'defer') wire:model="{{ $key }}" @endif
+        @if ($wire == 'lazy') wire:model.lazy="{{ $key }}" @endif
+        @if ($wire == 'live') wire:model.live="{{ $key }}" @endif
+        @if ($wire == 'blur') wire:model.blur="{{ $key }}" @endif
+        @if ($wire == 'change') wire:model.change="{{ $key }}" @endif id="{{ $id ?? $key }}_1"
+        name="{{ $key }}" value="1" {{ $required ? 'required' : null }}
+        {{ $disabled ? 'disabled' : null }}>
 
     <label class="form-check-label" for="{{ $key }}_1"
         @if ($errors->any()) {{ $errors->has($key) ? 'text-danger' : 'text-success' }} @endif>
