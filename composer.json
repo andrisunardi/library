@@ -3,7 +3,7 @@
     "description": "Library Andri Sunardi",
     "type": "library",
     "require": {
-        "laravel/framework": "^10.28",
+        "laravel/framework": "^11.9",
         "livewire/livewire": "^3.0",
         "buglinjo/laravel-webp": "^2.3"
     },
