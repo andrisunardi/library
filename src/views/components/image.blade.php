@@ -10,8 +10,13 @@
     'onerror' => '/images/image-not-available.png',
 ])
 
-<a draggable="{{ $draggable }}" href="{{ $href ?? $src }}" target="{{ $target }}"
-    @if ($navigate) wire:navigate @endif>
+@if ($href)
+    <a draggable="{{ $draggable }}" href="{{ $href }}" target="{{ $target }}"
+        @if ($navigate) wire:navigate @endif>
+        <img draggable="{{ $draggable }}" src="{{ $src }}" class="{{ $class }} w-{{ $width }}"
+            alt="{{ $alt }}" onerror="this.src='{{ $onerror }}'" />
+    </a>
+@else
     <img draggable="{{ $draggable }}" src="{{ $src }}" class="{{ $class }} w-{{ $width }}"
         alt="{{ $alt }}" onerror="this.src='{{ $onerror }}'" />
-</a>
+@endif
