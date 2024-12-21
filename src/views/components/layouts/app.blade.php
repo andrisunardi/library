@@ -14,7 +14,7 @@
         {{ env('APP_TITLE') }}
     </title>
 
-    @if (Route::is('cms.*') || explode('.', request()->getHost())[1] == 'cms')
+    @if (Route::is('cms.*'))
         @include('layouts.cms.vendors')
     @else
         @include('layouts.vendors')
@@ -22,7 +22,7 @@
 
     @stack('css')
 
-    @if (Route::is('cms.*') || explode('.', request()->getHost())[1] == 'cms')
+    @if (Route::is('cms.*'))
         @include('layouts.cms.css')
     @else
         @include('layouts.css')
@@ -30,13 +30,13 @@
 </head>
 
 <body>
-    @if (Route::is('cms.*') || explode('.', request()->getHost())[1] == 'cms')
+    @if (Route::is('cms.*'))
         @include('layouts.cms.body')
     @else
         @include('layouts.body')
     @endif
 
-    @if (Route::is('cms.*') || explode('.', request()->getHost())[1] == 'cms')
+    @if (Route::is('cms.*'))
         @include('layouts.cms.script')
     @else
         @include('layouts.script')
