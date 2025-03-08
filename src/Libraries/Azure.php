@@ -5,7 +5,7 @@ namespace Andrisunardi\Library\Libraries;
 use Buglinjo\LaravelWebp\Facades\Webp;
 use Illuminate\Support\Facades\Storage;
 
-class AzureService
+class Azure
 {
     public function upload($file, ?string $name = null, string $directory = 'other', bool $useWebp = true): string
     {
