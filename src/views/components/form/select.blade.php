@@ -6,6 +6,7 @@
     'title' => null,
     'icon' => null,
     'datas' => [],
+    'value' => null,
     'valueAttribute' => 'id',
     'textAttribute' => 'name',
     'required' => false,
@@ -37,7 +38,7 @@
         <option value="">{{ trans('index.select') }} {{ $title }}</option>
         @foreach ($datas as $data)
             <option value="{{ $data[$valueAttribute] ?? $data }}"
-                {{ ($data[$valueAttribute] ?? $data) == $this->$key ? 'selected' : null }}>
+                {{ ($data[$valueAttribute] ?? $data) == $value ? 'selected' : null }}>
                 {{ $data[$textAttribute] ?? $data }}
             </option>
         @endforeach
@@ -58,7 +59,7 @@
 
 @push('script')
     <script>
-        $("#{{ $key }}").on("change", function() {
+        $("#{{ $id ?? $key }}").on("change", function() {
             @this.set("{{ $key }}", $(this).val())
         })
     </script>

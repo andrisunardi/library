@@ -2,7 +2,7 @@
     'class' => null,
     'text' => trans('index.detail'),
     'icon' => 'fas fa-list',
-    'color' => 'dark',
+    'color' => 'info',
     'size' => 'md',
     'width' => '100',
     'href' => null,

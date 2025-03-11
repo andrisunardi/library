@@ -2,7 +2,7 @@
     'class' => null,
     'text' => trans('index.view'),
     'icon' => 'fas fa-eye',
-    'color' => 'dark',
+    'color' => 'info',
     'size' => 'md',
     'width' => '100',
     'href' => null,
