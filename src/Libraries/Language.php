@@ -438,6 +438,9 @@ class Language
             'region_id' => 'Region ID',
             'location_church' => 'Location Church',
             'is_active' => 'Active',
+            'sort_by' => 'Sort By',
+            'not_found' => 'Not Found',
+            'join' => 'Join',
         ];
     }
 
@@ -872,6 +875,9 @@ class Language
             'region_id' => 'ID Wilayah',
             'location_church' => 'Lokasi Gereja',
             'is_active' => 'Aktif',
+            'sort_by' => 'Urutkan Berdasarkan',
+            'not_found' => 'Tidak Ditemukan',
+            'join' => 'Gabung',
         ];
     }
 }
