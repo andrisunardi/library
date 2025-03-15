@@ -441,6 +441,10 @@ class Language
             'sort_by' => 'Sort By',
             'not_found' => 'Not Found',
             'join' => 'Join',
+            'super_admin' => 'Super Admin',
+            'role_ids' => 'Peran',
+            'role_id' => 'Peran',
+            'user_id' => 'User',
         ];
     }
 
@@ -878,6 +882,10 @@ class Language
             'sort_by' => 'Urutkan Berdasarkan',
             'not_found' => 'Tidak Ditemukan',
             'join' => 'Gabung',
+            'super_admin' => 'Super Admin',
+            'role_ids' => 'Roles',
+            'role_id' => 'Roles',
+            'user_id' => 'User',
         ];
     }
 }
