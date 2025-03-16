@@ -23,6 +23,7 @@
 
 <meta name="apple-mobile-web-app-title" content="{{ env('APP_NAME') }}" />
 <meta name="apple-mobile-web-app-capable" content="YES" />
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#{{ env('APP_COLOR') }}" />
 <meta name="apple-itunes-app" content="app-id={{ env('APPLE_ITUNES_APP') }}" />
 
