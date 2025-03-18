@@ -457,6 +457,13 @@ class Language
             'you_have_already_registered' => 'You Have Already Registered',
             'your_cart_is_empty' => 'Your Cart Is Empty',
             'youth' => 'Youth',
+            'quetion' => 'Question',
+            'quetion_id' => 'Question ID',
+            'answer' => 'Answer',
+            'answer_id' => 'Answer ID',
+            'faq' => 'FAQ',
+            'thank_you' => 'Thank You',
+            'frequently_asked_questions' => 'Frequently Asked Questions',
         ];
     }
 
@@ -910,6 +917,13 @@ class Language
             'you_have_already_registered' => 'Anda Sudah Melakukan Pendaftaran',
             'your_cart_is_empty' => 'Keranjang Anda Kosong',
             'youth' => 'Youth',
+            'quetion' => 'Pertanyaan',
+            'quetion_id' => 'Pertanyaan ID',
+            'answer' => 'Jawaban',
+            'answer_id' => 'Jawaban ID',
+            'faq' => 'Tanya Jawab',
+            'thank_you' => 'Terima Kasih',
+            'frequently_asked_questions' => 'Pertanyaan yang Sering Diajukan',
         ];
     }
 }
