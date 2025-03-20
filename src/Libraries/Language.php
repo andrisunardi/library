@@ -465,6 +465,8 @@ class Language
             'you_have_already_registered' => 'You Have Already Registered',
             'your_cart_is_empty' => 'Your Cart Is Empty',
             'youth' => 'Youth',
+            'group_name' => 'Group Name',
+            'connect_group_position' => 'Connect Group Position',
         ];
     }
 
@@ -926,6 +928,8 @@ class Language
             'you_have_already_registered' => 'Anda Sudah Melakukan Pendaftaran',
             'your_cart_is_empty' => 'Keranjang Anda Kosong',
             'youth' => 'Youth',
+            'group_name' => 'Nama Grup',
+            'connect_group_position' => 'Posisi Connect Group',
         ];
     }
 }
