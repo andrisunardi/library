@@ -119,6 +119,7 @@ class Language
             'create' => 'Create',
             'created_at' => 'Created At',
             'created_by' => 'Created By',
+            'deleted_by' => 'Deleted By',
             'created' => 'Created',
             'current_registration' => 'Current Registration',
             'current' => 'Current',
@@ -340,7 +341,7 @@ class Language
             're_registration' => 'Re-Registration',
             'redirect_url' => 'Redirect Url',
             'refresh' => 'Refresh',
-            'region_id' => 'Region ID',
+            'region_id' => 'Region',
             'region' => 'Region',
             'registration_can_be_done_when_you_already_have_a_connect_group' => 'Registration can be done when you already have a CG (Connect Group)',
             'registration_detail' => 'Registration Detail',
@@ -476,6 +477,9 @@ class Language
             'maintenance_description_id' => 'Maintenance Description ID',
             'maintenance_start_datetime' => 'Maintenance Start Date Time',
             'maintenance_end_datetime' => 'Maintenance End Date Time',
+            'photo' => 'Photo',
+            'water_baptism_when' => 'Water Baptism When',
+            'water_baptism_where' => 'Water Baptism Where',
         ];
     }
 
@@ -813,7 +817,7 @@ class Language
             're_registration' => 'Daftar Ulang',
             'redirect_url' => 'Url Pengalihan',
             'refresh' => 'Segarkan',
-            'region_id' => 'ID Wilayah',
+            'region_id' => 'Wilayah',
             'region' => 'Wilayah',
             'registration_can_be_done_when_you_already_have_a_connect_group' => 'Pendaftaran dapat dilakukan ketika anda sudah ada CG (Connect Group)',
             'registration_detail' => 'Detail Pendaftaran',
@@ -948,6 +952,10 @@ class Language
             'maintenance_description_id' => 'Deskripsi Pemeliharaan ID',
             'maintenance_start_datetime' => 'Mulai Tanggal Waktu Pemeliharaan',
             'maintenance_end_datetime' => 'Akhir Tanggal Waktu Pemeliharaan',
+            'deleted_by' => 'Dihapus Oleh',
+            'photo' => 'Foto',
+            'water_baptism_when' => 'Kapan Baptisan Air',
+            'water_baptism_where' => 'Dimana Baptisan Air',
         ];
     }
 }
