@@ -467,6 +467,15 @@ class Language
             'youth' => 'Youth',
             'group_name' => 'Group Name',
             'connect_group_position' => 'Connect Group Position',
+            'preview' => 'Preview',
+            'information_title' => 'Information Title',
+            'information_title_id' => 'Information Title ID',
+            'information_description' => 'Information Description',
+            'information_description_id' => 'Information Description ID',
+            'maintenance_description' => 'Maintenance Description',
+            'maintenance_description_id' => 'Maintenance Description ID',
+            'maintenance_start_datetime' => 'Maintenance Start Date Time',
+            'maintenance_end_datetime' => 'Maintenance End Date Time',
         ];
     }
 
@@ -930,6 +939,15 @@ class Language
             'youth' => 'Youth',
             'group_name' => 'Nama Grup',
             'connect_group_position' => 'Posisi Connect Group',
+            'preview' => 'Pratinjau',
+            'information_title' => 'Judul Informasi',
+            'information_title_id' => 'Judul Informasi ID',
+            'information_description' => 'Deskripsi Informasi',
+            'information_description_id' => 'Deskripsi Informasi ID',
+            'maintenance_description' => 'Deskripsi Pemeliharaan',
+            'maintenance_description_id' => 'Deskripsi Pemeliharaan ID',
+            'maintenance_start_datetime' => 'Mulai Tanggal Waktu Pemeliharaan',
+            'maintenance_end_datetime' => 'Akhir Tanggal Waktu Pemeliharaan',
         ];
     }
 }
