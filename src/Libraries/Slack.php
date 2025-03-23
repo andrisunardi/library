@@ -37,7 +37,7 @@ class Slack
         }
 
         if (config('app.env') == 'production' || $force) {
-            $response = Http::post($url, $payload)->throw()->json();
+            $response = Http::post($url, $payload)->json();
 
             return $response;
         }
