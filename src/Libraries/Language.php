@@ -507,6 +507,11 @@ class Language
             'connect_group_leader_email' => 'Connect Group Leader Email',
             'connect_group_leader_phone' => 'Connect Group Leader Phone',
             'deleted_at' => 'Deleted At',
+            'used_qty' => 'Used Qty',
+            'image_url' => 'Image Url',
+            'size_image_url' => 'Size Image Url',
+            'website' => 'Website',
+            'misc_fee' => 'Misc Fee',
         ];
     }
 
@@ -1010,6 +1015,11 @@ class Language
             'connect_group_leader_email' => 'Connect Group Leader Email',
             'connect_group_leader_phone' => 'Connect Group Leader Phone',
             'deleted_at' => 'Tanggal Dihapus',
+            'used_qty' => 'Jumlah Digunakan',
+            'image_url' => 'Url Gambar',
+            'size_image_url' => 'Url Ukuran Gambar',
+            'website' => 'Situs Web',
+            'misc_fee' => 'Biaya Lain-Lain',
         ];
     }
 }
