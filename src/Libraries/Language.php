@@ -519,6 +519,7 @@ class Language
             'item_quantity' => 'Item Quantity',
             'item_notes' => 'Item Notes',
             'is_volunteer' => 'Volunteer',
+            'grand_total' => 'Grand Total',
         ];
     }
 
@@ -1034,6 +1035,7 @@ class Language
             'item_price' => 'Harga Barang',
             'item_quantity' => 'Jumlah Barang',
             'item_notes' => 'Catatan Barang',
+            'grand_total' => 'Total Keseluruhan',
         ];
     }
 }
