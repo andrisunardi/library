@@ -512,6 +512,13 @@ class Language
             'size_image_url' => 'Size Image Url',
             'website' => 'Website',
             'misc_fee' => 'Misc Fee',
+            'location_id' => 'Location ID',
+            'item_church' => 'Item Church',
+            'item_name' => 'Item Nama',
+            'item_price' => 'Item Price',
+            'item_quantity' => 'Item Quantity',
+            'item_notes' => 'Item Notes',
+            'is_volunteer' => 'Volunteer',
         ];
     }
 
@@ -1020,6 +1027,13 @@ class Language
             'size_image_url' => 'Url Ukuran Gambar',
             'website' => 'Situs Web',
             'misc_fee' => 'Biaya Lain-Lain',
+            'location_id' => 'Lokasi ID',
+            'is_volunteer' => 'Sukarelawan',
+            'item_church' => 'Gereja Barang',
+            'item_name' => 'Nama Barang',
+            'item_price' => 'Harga Barang',
+            'item_quantity' => 'Jumlah Barang',
+            'item_notes' => 'Catatan Barang',
         ];
     }
 }
