@@ -6,6 +6,7 @@
     'title' => null,
     'icon' => null,
     'datas' => [],
+    'value' => null,
     'valueAttribute' => 'value',
     'textAttribute' => 'name',
     'required' => false,
@@ -36,8 +37,7 @@
         {{ $disabled ? 'disabled' : null }}>
         <option value="">{{ trans('index.select') }} {{ $title }}</option>
         @foreach ($datas as $data)
-            <option value="{{ $data->$valueAttribute }}"
-                {{ $data->$valueAttribute == $this->$key ? 'selected' : null }}>
+            <option value="{{ $data->$valueAttribute }}" {{ $data->$valueAttribute == $value ? 'selected' : null }}>
                 {{ Utils::translate($data->$textAttribute) }}
             </option>
         @endforeach
