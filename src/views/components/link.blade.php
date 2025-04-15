@@ -29,7 +29,7 @@
             <span class="{{ $icon }} fa-fw"></span>
         @endif
 
-        {{ $text }}
+        {!! $text !!}
 
         @if ($icon && $position == 'right')
             <span class="{{ $icon }} fa-fw"></span>
