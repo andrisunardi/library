@@ -522,6 +522,9 @@ class Language
             'your_cart_is_empty' => 'Your Cart Is Empty',
             'youth' => 'Youth',
             'grand_total' => 'Grand Total',
+            'total_quota' => 'Total Quota',
+            'remaining_quota' => 'Remaining Quota',
+            'payment_successful' => 'Payment Successful',
         ];
     }
 
@@ -1040,6 +1043,9 @@ class Language
             'your_cart_is_empty' => 'Keranjang Anda Kosong',
             'youth' => 'Youth',
             'grand_total' => 'Grand Total',
+            'total_quota' => 'Total Kuota',
+            'remaining_quota' => 'Sisa Kuota',
+            'payment_successful' => 'Pembayaran Berhasil',
         ];
     }
 }
