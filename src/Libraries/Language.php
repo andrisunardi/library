@@ -525,6 +525,9 @@ class Language
             'total_quota' => 'Total Quota',
             'remaining_quota' => 'Remaining Quota',
             'payment_successful' => 'Payment Successful',
+            'please' => 'Please',
+            'first' => 'First',
+            'or' => 'Or',
         ];
     }
 
@@ -1046,6 +1049,9 @@ class Language
             'total_quota' => 'Total Kuota',
             'remaining_quota' => 'Sisa Kuota',
             'payment_successful' => 'Pembayaran Berhasil',
+            'please' => 'Mohon',
+            'first' => 'Pertama',
+            'or' => 'Atau',
         ];
     }
 }
