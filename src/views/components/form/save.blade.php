@@ -2,7 +2,7 @@
     'class' => null,
     'key' => 'submit',
     'text' => trans('index.save'),
-    'icon' => 'fas fa-floppy-disk',
+    'icon' => 'fas fa-save',
     'type' => 'submit',
     'color' => 'success',
 ])
