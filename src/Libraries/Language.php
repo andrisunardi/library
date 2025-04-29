@@ -528,6 +528,9 @@ class Language
             'please' => 'Please',
             'first' => 'First',
             'or' => 'Or',
+            'open' => 'Open',
+            'open_at' => 'Open At',
+            'close_at' => 'Close At',
         ];
     }
 
@@ -1052,6 +1055,9 @@ class Language
             'please' => 'Mohon',
             'first' => 'Pertama',
             'or' => 'Atau',
+            'open' => 'Buka',
+            'open_at' => 'Tanggal Buka',
+            'close_at' => 'Tanggal Tutup',
         ];
     }
 }
