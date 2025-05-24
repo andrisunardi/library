@@ -531,6 +531,8 @@ class Language
             'open' => 'Open',
             'open_at' => 'Open At',
             'close_at' => 'Close At',
+            'export' => 'Export',
+            'import' => 'Import',
         ];
     }
 
@@ -1058,6 +1060,8 @@ class Language
             'open' => 'Buka',
             'open_at' => 'Tanggal Buka',
             'close_at' => 'Tanggal Tutup',
+            'export' => 'Ekspor',
+            'import' => 'Impor',
         ];
     }
 }
