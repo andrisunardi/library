@@ -537,6 +537,7 @@ class Language
             'you_have_already_registered' => 'You Have Already Registered',
             'your_cart_is_empty' => 'Your Cart Is Empty',
             'youth' => 'Youth',
+            'slider' => 'Slider',
         ];
     }
 
@@ -1070,6 +1071,7 @@ class Language
             'you_have_already_registered' => 'Anda Sudah Melakukan Pendaftaran',
             'your_cart_is_empty' => 'Keranjang Anda Kosong',
             'youth' => 'Youth',
+            'slider' => 'Slider',
         ];
     }
 }
