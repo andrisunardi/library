@@ -542,6 +542,7 @@ class Language
             'description' => 'Description',
             'product_category_id' => 'Product Category',
             'product_size_id' => 'Product Size',
+            'recap' => 'Recap',
         ];
     }
 
@@ -1080,6 +1081,7 @@ class Language
             'description' => 'Deskripsi',
             'product_category_id' => 'Kategori Produk',
             'product_size_id' => 'Ukuran Produk',
+            'recap' => 'Rekap',
         ];
     }
 }
