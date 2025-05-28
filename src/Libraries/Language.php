@@ -540,6 +540,8 @@ class Language
             'youth' => 'Youth',
             'slider' => 'Slider',
             'description' => 'Description',
+            'product_category_id' => 'Product Category',
+            'product_size_id' => 'Product Size',
         ];
     }
 
@@ -1076,6 +1078,8 @@ class Language
             'youth' => 'Youth',
             'slider' => 'Slider',
             'description' => 'Deskripsi',
+            'product_category_id' => 'Kategori Produk',
+            'product_size_id' => 'Ukuran Produk',
         ];
     }
 }
